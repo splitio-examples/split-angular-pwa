@@ -1,0 +1,24 @@
+<h1 class="h1">Search Results</h1>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" class="products">
+    <table mat-table fxFlex="100%" fxFlex.gt-sm="66%" [dataSource]="repositories" class="mat-elevation-z1">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let repository"> {{repository.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="html_url">
+            <th mat-header-cell *matHeaderCellDef>URL</th>
+            <td mat-cell *matCellDef="let repository"><a href="{{repository.html_url}}"
+                    target="new">{{repository.html_url}}</a> </td>
+        </ng-container>
+        <ng-container matColumnDef="fork">
+            <th mat-header-cell *matHeaderCellDef>Fork?</th>
+            <td mat-cell *matCellDef="let repository">{{repository.fork}}</td>
+        </ng-container>
+        <ng-container matColumnDef="created_at">
+            <th mat-header-cell *matHeaderCellDef>Creation Date</th>
+            <td mat-cell *matCellDef="let repository"> {{repository.created_at}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

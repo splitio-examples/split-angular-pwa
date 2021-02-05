@@ -19,12 +19,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { SplitioService } from './splitio.service';
  
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,7 @@ import { SearchComponent } from './search/search.component';
     MatProgressSpinnerModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SplitioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
